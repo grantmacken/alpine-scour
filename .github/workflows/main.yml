@@ -1,0 +1,21 @@
+name: alpine-scour-ci
+
+on:
+  push:
+    branches: master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: crazy-max/ghaction-docker-buildx@v1
+        with:
+          version: latest
+      - name: make images
+        run: |
+          make bld
