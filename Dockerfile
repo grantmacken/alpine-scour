@@ -7,12 +7,6 @@ ENV LANG C.UTF-8
 WORKDIR /home
 STOPSIGNAL SIGTERM
 
-ENTRYPOINT [ "scour", "--help" ]
-# ENTRYPOINT [ \
-#  "scour", \
-#  "-i", \
-#  "--enable-viewboxing", \
-#  "--enable-id-stripping", \
-#  "--enable-comment-stripping", \
-#  "--shorten-ids", \
-#  "--indent=none" ]
+# ENTRYPOINT [ "scour", "--help" ]
+# read from stdin
+ENTRYPOINT [ "scour",  "--enable-viewboxing", "--enable-id-stripping", "--enable-comment-stripping", "--shorten-ids", "--indent=none" ]
