@@ -19,3 +19,8 @@ jobs:
       - name: make images
         run: |
           make bld
+      - name: Push proxy image to Github Packages
+        run: |
+          source .env
+          echo ${{ secrets.GITHUB_TOKEN }} | docker login docker.pkg.github.com --username ${REPO_OWNER} --password-stdin
+          docker push docker.pkg.github.com/${REPO_OWNER}/${REPO_NAME}/${CONTAINER_NAME}:${VERSION}
