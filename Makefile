@@ -7,7 +7,7 @@ bld:
 	@export DOCKER_BUILDKIT=1;
 	@docker buildx build -o type=docker \
   --target=bld \
-  --tag='$(DOCKER_IMAGE):bld' \
+  --tag='docker.pkg.github.com/$(REPO_OWNER)/$(REPO_NAME)/$(CONTAINER_NAME):$(VERSION)' \
  .
 
 .PHONY: run
