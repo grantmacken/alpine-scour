@@ -16,9 +16,10 @@ jobs:
         uses: crazy-max/ghaction-docker-buildx@v1
         with:
           version: latest
-      - name: make images
+      - name: make image and try out
         run: |
-          make bld
+          make bld 
+          make run
       - name: Push proxy image to Github Packages
         run: |
           source .env

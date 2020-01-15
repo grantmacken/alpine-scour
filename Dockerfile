@@ -8,5 +8,5 @@ WORKDIR /home
 STOPSIGNAL SIGTERM
 
 # ENTRYPOINT [ "scour", "--help" ]
-# read from stdin
-ENTRYPOINT [ "scour",  "--enable-viewboxing", "--enable-id-stripping", "--enable-comment-stripping", "--shorten-ids", "--indent=none" ]
+# read from stdin use defaults
+ENTRYPOINT [ "scour","--quiet","--enable-viewboxing","--enable-id-stripping","--enable-comment-stripping","--shorten-ids","--indent=none" ]

@@ -12,12 +12,9 @@ bld:
 
 .PHONY: run
 run:
-	@docker run \
- --rm \
-  --name scour \
+	@cat fixtures/inkscape.svg | docker run \
   --rm \
-   $(DOCKER_IMAGE):bld
+  --name scour \
+  --interactive \
+  docker.pkg.github.com/$(REPO_OWNER)/$(REPO_NAME)/$(CONTAINER_NAME):$(VERSION)  
 
-# --entrypoint "/bin/ash" \
-#
-# -it \
